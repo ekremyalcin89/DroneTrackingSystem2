@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  DroneTrackingSystem2
 //
-//  Created by Tayyip on 26.04.2023.
+//  Created by Ekrem on 26.04.2023.
 //
 
 import UIKit
