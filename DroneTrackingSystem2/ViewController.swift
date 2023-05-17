@@ -13,26 +13,26 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    let numberOfPages = 4
+
         
-        // Enable horizontal scrolling
-        scrollView.isPagingEnabled = true
-        
-        // Set the content size
-        scrollView.contentSize = CGSize(width: scrollView.frame.width * 4, height: scrollView.frame.height)
-        scrollView.backgroundColor = .blue
-        
-        // Add your content views to the scroll view
-        // You can add multiple views horizontally to achieve scrolling effect
-        for i in 0...4 {
-            let contentView = UIView(frame: CGRect(x: CGFloat(i) * scrollView.frame.width, y: 0, width: scrollView.frame.width, height: scrollView.frame.height))
-            // Customize and add your content views here
-            scrollView.addSubview(contentView)
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            // Enable horizontal scrolling
+            scrollView.isPagingEnabled = true
+            
+            // Set the content size
+            scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(numberOfPages), height: scrollView.frame.height)
+            
+            // Add your content views to the scroll view
+            for i in 0..<numberOfPages {
+                let contentView = UIView(frame: CGRect(x: CGFloat(i) * scrollView.frame.width, y: 0, width: scrollView.frame.width, height: scrollView.frame.height))
+                // Customize and add your content views here
+                contentView.backgroundColor = UIColor(red: CGFloat(i) / CGFloat(numberOfPages), green: 0.5, blue: 0.8, alpha: 1.0)
+                scrollView.addSubview(contentView)
+            }
         }
-        
         
     }
     
-}
